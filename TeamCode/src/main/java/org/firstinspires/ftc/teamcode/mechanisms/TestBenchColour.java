@@ -44,7 +44,15 @@ public class TestBenchColour {
         if (normRed > 0.35 && normGreen < 0.3 && normBlue < 0.3) {
             return detectedColour.RED;
         }
+        else if (normRed > 0.5 && normGreen > 0.9 && normBlue < 0.6) {
+            return detectedColour.YELLOW;
+        }
+        else if (normRed < 0.2 && normGreen < 0.5 && normBlue > 0.5) {
+            return  detectedColour.BLUE;
+        }
+        else {
+            return  detectedColour.UNKNOWN;
+        }
 
-        return detectedColour.UNKNOWN;
     }
 }

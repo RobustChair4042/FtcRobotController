@@ -8,6 +8,7 @@ import org.firstinspires.ftc.teamcode.mechanisms.TestBenchColour;
 @TeleOp
 public class ColourSensorTest extends OpMode {
     TestBenchColour bench = new TestBenchColour();
+    TestBenchColour.detectedColour detectedColour;
 
 
     @Override
@@ -18,7 +19,8 @@ public class ColourSensorTest extends OpMode {
 
     @Override
     public void loop() {
-        bench.getDetectedColour(telemetry);
+        detectedColour = bench.getDetectedColour(telemetry);
+        telemetry.addData("Colour Detected", detectedColour);
 
     }
 }
